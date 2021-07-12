@@ -568,5 +568,70 @@ input[type=number] {
   -moz-appearance: textfield;
 }
 
+nav {
+  position: fixed;
+  width: 60px;
+  margin-top: 150px;
+  transition: all 0.3s linear;
+  box-shadow: 2px 2px 8px 0px rgba(0, 0, 0, .4);
+  z-index: 10;
+}
 
+nav ul {
+  margin-top: 0;
+  margin-bottom: 0rem
+}
+
+nav li {
+  height: 45px;
+  position: relative
+}
+
+nav li a {
+  color: #fff !important;
+  display: block;
+  height: 100%;
+  width: 100%;
+  line-height: 45px;
+  padding-left: 25%;
+  transition: all .2s linear;
+  text-decoration: none !important
+}
+
+nav li:nth-child(1) a {
+  background: #4267B2
+}
+
+nav li:nth-child(2) a {
+  background: #333
+}
+
+nav li:nth-child(3) a {
+  background: #0bf
+}
+
+nav li a i {
+  position: absolute;
+  top: 14px;
+  left: 24px;
+  font-size: 15px
+}
+
+ul li a span {
+  display: none;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-transform: uppercase
+}
+
+a:hover {
+  z-index: 1;
+  width: 150px;
+}
+
+ul li:hover a span {
+  padding-left: 30%;
+  display: block;
+  font-size: 15px
+}
 

@@ -20,12 +20,20 @@
 	<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='vendor/select2/select2.min.css') }}">
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='vendor/daterangepicker/daterangepicker.css') }}">
-<!--===============================================================================================-->
+	<link href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" rel="stylesheet">
+<!--===============================================================================================-->		
 	<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/util.css') }}">
 	<link rel= "stylesheet" type= "text/css" href="{{ url_for('static',filename='css/main.css') }}">
 <!--===============================================================================================-->
 </head>
 <body>
+	<nav>
+		<ul>
+			<li><a href="https://www.linkedin.com/in/ihor-muliar/" target="_blank"><i class="fab fa-linkedin-in"></i><span>Linkedin</span></a></li>
+			<li><a href="https://github.com/IhorMuliar"><i class="fab fa-github" target="_blank"></i><span>Github</span></a></li>
+			<li><a href="https://www.kaggle.com/ihormuliar"><i class="fab fa-kaggle" target="_blank"></i><span>Kaggle</span></a></li>
+		</ul>
+	</nav>
 	<div class="container-contact100">
 		<div class="wrap-contact100">
 			<form id="form_pred" class="contact100-form validate-form" action="{{ url_for('predict')}}" method="POST">
