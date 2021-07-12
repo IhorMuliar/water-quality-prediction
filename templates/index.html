@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Water Quality Predictor</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->
+	<link rel="icon" type="image/png" href="{{ url_for('static',filename='images/favicon.ico') }}" />
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='vendor/bootstrap/css/bootstrap.min.css') }}" >
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='fonts/font-awesome-4.7.0/css/font-awesome.min.css') }}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='vendor/animate/animate.css') }}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='vendor/css-hamburgers/hamburgers.min.css') }}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='vendor/animsition/css/animsition.min.css') }}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='vendor/select2/select2.min.css') }}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='vendor/daterangepicker/daterangepicker.css') }}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/util.css') }}">
+	<link rel= "stylesheet" type= "text/css" href="{{ url_for('static',filename='css/main.css') }}">
+<!--===============================================================================================-->
+</head>
+<body>
+	<div class="container-contact100">
+		<div class="wrap-contact100">
+			<form id="form_pred" class="contact100-form validate-form" action="{{ url_for('predict')}}" method="POST">
+				<span class="contact100-form-title">
+					Water Quality Prediction
+				</span>
+
+				<div class="wrap-input100 validate-input" data-validate="Brand is required">
+					<span class="label-input100">pH</span>
+					<input class="input100" type="number" id="ph" name="ph" placeholder="">
+					<span class="focus-input100"></span>
+				</div>
+
+				<div class="wrap-input100 validate-input" data-validate="Model is required">
+					<span class="label-input100">Hardness</span>
+					<input class="input100" type="number" id="Hardness" name="Hardness" placeholder="">
+					<span class="focus-input100"></span>
+				</div>
+
+				<div class="wrap-input100 validate-input" data-validate="Year of model is required">
+					<span class="label-input100">Solids</span>
+					<input class="input100" type="number" id="Solids" name="Solids" placeholder="">
+					<span class="focus-input100"></span>
+				</div>
+
+                <div class="wrap-input100 validate-input" data-validate="Year of model is required">
+					<span class="label-input100">Chloramines</span>
+					<input class="input100" type="number" id="Chloramines" name="Chloramines" placeholder="">
+					<span class="focus-input100"></span>
+				</div>
+
+				<div class="wrap-input100 validate-input" data-validate="Mileage is required">
+					<span class="label-input100">Sulfate</span>
+					<input class="input100" type="number" id="Sulfate" name="Sulfate" placeholder="">
+					<span class="focus-input100"></span>
+				</div>
+
+				<div class="wrap-input100 validate-input" data-validate="Color is required">
+					<span class="label-input100">Conductivity</span>
+					<input class="input100" type="number" id="Conductivity" name="Conductivity" placeholder="">
+					<span class="focus-input100"></span>
+				</div>
+
+				<div class="wrap-input100 validate-input" data-validate="State is required">
+					<span class="label-input100">Organic carbon</span>
+					<input class="input100" type="number" id="Organic_carbon" name="Organic_carbon" placeholder="">
+					<span class="focus-input100"></span>
+				</div>
+
+                <div class="wrap-input100 validate-input" data-validate="State is required">
+					<span class="label-input100">Trihalomethanes</span>
+					<input class="input100" type="number" id="Trihalomethanes" name="Trihalomethanes" placeholder="">
+					<span class="focus-input100"></span>
+				</div>
+
+                <div class="wrap-input100 validate-input" data-validate="State is required">
+					<span class="label-input100">Turbidity</span>
+					<input class="input100" type="number" id="Turbidity" name="Turbidity" placeholder="">
+					<span class="focus-input100"></span>
+				</div>
+
+				<div class="container-contact100-form-btn">
+					<div class="wrap-contact100-form-btn">
+						<div class="contact100-form-bgbtn"></div>
+						<button id="predict" class="contact100-form-btn">
+							<span>
+								Is water safe for consumption? 
+								<i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
+							</span>
+						</button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+	
+	<div id="dropDownSelect1"></div>
+
+
+<!--===============================================================================================-->
+	<script src="{{ url_for('static',filename='vendor/jquery/jquery-3.2.1.min.js') }}"></script>
+<!--===============================================================================================-->
+	<script src="{{ url_for('static',filename='vendor/animsition/js/animsition.min.js') }}"></script>
+<!--===============================================================================================-->
+	<script src="{{ url_for('static',filename='vendor/bootstrap/js/popper.js') }}"></script>
+	<script src="{{ url_for('static',filename='vendor/bootstrap/js/bootstrap.min.js') }}"></script>
+<!--===============================================================================================-->
+	<script src="{{ url_for('static',filename='vendor/select2/select2.min.js') }}"></script>
+	<script>
+		$(".selection-2").select2({
+			minimumResultsForSearch: 20,
+			dropdownParent: $('#dropDownSelect1')
+		});
+	</script>
+<!--===============================================================================================-->
+	<script src="{{ url_for('static',filename='vendor/daterangepicker/moment.min.js') }}"></script>
+	<script src="{{ url_for('static',filename='vendor/daterangepicker/daterangepicker.js') }}"></script>
+<!--===============================================================================================-->
+	<script src="{{ url_for('static',filename='vendor/countdowntime/countdowntime.js') }}"></script>
+<!--===============================================================================================-->
+	<script src="{{ url_for('static',filename='js/main.js') }}"></script>
+	<!-- include sweetAlert plugin -->
+	<script src="{{ url_for('static',filename='js/sweetalert2.all.js') }}"></script>
+	<script type="text/javascript">
+		$(function () {
+
+	        $("button#predict").click(function(e){
+	        	e.preventDefault();
+
+	        	/*send the ajax request*/
+	        	$.ajax({
+	        		method : "POST",
+	        		url : window.location.href + 'predict',
+	        		data : $('form').serialize(),
+	        		success : function(result){
+	        			var json_result = JSON.parse(result);
+	        			var potable = json_result['potable'];
+                        if (potable === 1){
+                            swal('Water is safe for human consumption', '', 'success')
+                        } else {
+                            swal("Water isn't safe for human consumption", '', 'error')
+                        }
+	        			
+	        		},
+	        		error : function(){
+	        			console.log("error")
+	        		}
+	        	})
+	        })
+	    
+		});
+	</script>
+</body>
+</html>
